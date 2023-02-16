@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reastrants_app/constants/constant_color.dart';
 import 'package:reastrants_app/pages/home/bannarPHotos.dart';
+import 'package:reastrants_app/pages/home/promotion.dart';
 import 'package:reastrants_app/pages/home/smooth_page_indicator.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -18,7 +19,7 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 112,
+              height: 100,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: darkBlueColor,
@@ -44,12 +45,15 @@ class Home extends StatelessWidget {
                     ),
                     //notification 
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 22.0, right: 30),
+                    child: Icon(Icons.notifications_active, size: 23, color: Colors.white,),
+                  )
                 ],
               ),
             ),
             //banner images
            Smoothpage1(),
-           
            //promotion part 
            SizedBox(height: 30,),
            Padding(
@@ -65,11 +69,76 @@ class Home extends StatelessWidget {
              ),),
              ),
            ),
-           
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                prom(Imgurl: "assets/images/promotion1.png", price: '25% OFF', title: 'Price 6 up',), 
+                prom(Imgurl: "assets/images/promotion2.png", price: '25% OFF', title: 'Price 8 up',), 
+                prom(Imgurl: "assets/images/promotion1.png", price: '25% OFF', title: 'Price 6 up',),
+              ],
+            ),
+          ), 
+        //categories part will start
+          SizedBox(height: 30,),
+           Padding(
+             padding: const EdgeInsets.only(left: 28.0),
+             child: Container(
+              height: 24,
+              width: 116,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: brownColor
+              ),child: Text("Categories",textAlign: TextAlign.center, style: GoogleFonts.poppins(
+              fontSize: 16, fontWeight: FontWeight.w400, color: lightWhiteColor
+             ),),
+             ),
+           ),
+         Promotion(),
             
           ],
         ),
       ),
     );
   }
+
+  
+  Widget prom ({
+    required String Imgurl,
+    required String price,
+    required String title
+  }) => InkWell(
+    onTap: (){},
+    child: Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+          child: Stack(
+            children: [
+              Image(image: AssetImage(Imgurl)),
+              Positioned(
+                left: 11,
+                bottom: 22,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: Text(price, style: GoogleFonts.poppins(
+                    fontSize: 13, fontWeight: FontWeight.w600, color: Color(0xFFC24D2C)
+                  ),),
+                )),
+             
+            ],
+          ),
+        ),
+         Padding(
+           padding: const EdgeInsets.only(left: 63, top: 8),
+           child: Text(title, style: GoogleFonts.poppins(
+                fontSize: 13, fontWeight: FontWeight.w500, color: Colors.black
+            ),),
+         ),
+      ],
+    ),
+  );
 }
