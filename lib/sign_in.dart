@@ -25,7 +25,7 @@ class _SignInState extends State<SignIn> {
           child: Column(
             children: [
                 Container(
-                  margin: EdgeInsets.only(left: 153,right: 141, top: 161),
+                  margin: EdgeInsets.only(left: 153,right: 141, top: 151),
                   height: 131,
                   width: 131,
                   decoration: BoxDecoration(
@@ -107,11 +107,11 @@ class _SignInState extends State<SignIn> {
                     ),),
                   ),),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: 15,),
                 Text("Forgot Password?", style: GoogleFonts.poppins(
                   fontSize: 20, fontWeight: FontWeight.w400, color: Color(0xFFC24D2C)
                 ),),
-                SizedBox(height: 20,),
+                SizedBox(height: 15,),
               //sign in with
               Container(
                   child: Column(
@@ -140,21 +140,59 @@ class _SignInState extends State<SignIn> {
                     ],
                   ),
                  ),
-                 SizedBox(height: 20,),
+                 SizedBox(height: 15,),
                  // we will create social media logo 
                  Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(width: 0,),
-                    Image.asset("assets/images/facebook.png", width: 54,),
-                    SizedBox(width: 22,),
-                    Image.asset("assets/images/google.png", width: 54,),
-                    SizedBox(width: 22,),
-                    Image.asset("assets/images/twitter.png", width: 54,),
+                    Container(
+                      height: 54,
+                      width: 54,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.black
+                      ),
+                      child: Image.asset("assets/images/facebook.png", width: 54,)),
+                      SizedBox(width: 22,),
+                     Container(
+                      height: 54,
+                      width: 54,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.black
+                      ),
+                      child: Image.asset("assets/images/google.png", width: 54,)),
+                      SizedBox(width: 22,),
+                     Container(
+                      height: 54,
+                      width: 54,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.black
+                      ),
+                      child: Image.asset("assets/images/twitter.png", width: 54,)),
+                    
                   ],
                  ),
-                 SizedBox(height: 20,),
-                 Text("Don’t have a account? Sign Up")
+                 SizedBox(height: 15,),
+                  Text.rich(
+                    TextSpan(
+                      text: 'Don’t have a account? ',
+                      style: GoogleFonts.poppins(
+                        fontSize: 20, fontWeight: FontWeight.w400, color: Color(0xFF000000)
+                      ),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: 'Sign Up',
+                            style: GoogleFonts.poppins(
+                              fontSize: 20, fontWeight: FontWeight.w400, color: Color(0xFFC24D2C)
+                            )),
+                        // can add more TextSpans here...
+                      ],
+                    ),
+                  )
+                // Text("Don’t have a account? Sign Up")
             ],
           ),
         ),

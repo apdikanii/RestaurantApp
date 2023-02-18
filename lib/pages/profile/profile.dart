@@ -116,7 +116,7 @@ class Profile extends StatelessWidget {
             width: 45,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
-              color: Color.fromARGB(15, 0, 0, 0)
+              color: Color.fromARGB(25, 0, 0, 0)
             ),
             child: Icon(icon, color: darkBlueColor,)),
            label: Text(text, style: GoogleFonts.poppins(

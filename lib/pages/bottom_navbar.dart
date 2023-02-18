@@ -37,7 +37,7 @@ final screens = [
           ),
         ),
          child: NavigationBar(
-          height: 100,
+          height: 76,
           backgroundColor: darkBlueColor,
           //labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           //animationDuration: Duration(seconds: 3),
@@ -48,13 +48,13 @@ final screens = [
           },
         destinations: [
          NavigationDestination(
-          icon: Icon(Icons.home, color: lightWhiteColor,),
+          icon: Icon(Icons.home, color: Colors.white.withOpacity(0.8),),
             label: "Home"),
           NavigationDestination(
            icon: Icon(Icons.file_copy_rounded, color: lightWhiteColor,),
              label: 'Orders',),
           NavigationDestination(
-           icon: Icon(Icons.person, color: lightWhiteColor,),
+           icon: Icon(Icons.person, color: Colors.white.withOpacity(0.8),),
             label: 'Profile',),
           ],),
           ),

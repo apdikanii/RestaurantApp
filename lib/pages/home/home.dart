@@ -19,16 +19,16 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 100,
+              height: 112,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: darkBlueColor,
               ),
               child: Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 24)),
+                  Padding(padding: EdgeInsets.only(top: 45,left: 24)),
                   Expanded(
-                    child: TextField(
+                   child: TextField(
                       onChanged: (value) {},
                       decoration: InputDecoration(
                         hintText: "Welcome", hintStyle: GoogleFonts.poppins(
@@ -80,7 +80,7 @@ class Home extends StatelessWidget {
             ),
           ), 
         //categories part will start
-          SizedBox(height: 30,),
+          SizedBox(height: 10,),
            Padding(
              padding: const EdgeInsets.only(left: 28.0),
              child: Container(
@@ -94,7 +94,28 @@ class Home extends StatelessWidget {
              ),),
              ),
            ),
-         Promotion(),
+
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                SizedBox(width: 30,), 
+                categ(Imgurl: "assets/images/categories1.png", name: 'Ice'),
+                categ(Imgurl: "assets/images/categories2.png", name: 'Hot'),
+                categ(Imgurl: "assets/images/categories3.png", name: 'Tea'),
+                Container(
+                  width: 83,
+                  margin: EdgeInsets.only(left: 18),
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                  // color: Color(0xFFC24D2C),
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: categ(Imgurl: "assets/images/categories4.png", name: 'lemon'),)
+              ],
+            ),
+          ), 
+         //Promotion(),
             
           ],
         ),
@@ -141,4 +162,36 @@ class Home extends StatelessWidget {
       ],
     ),
   );
+
+  Widget categ ({
+    required String Imgurl,
+    required String name,
+  }) => InkWell(
+    onTap: (){},
+    child: Container(
+      width: 83,
+      margin: EdgeInsets.only(left: 18),
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+       // color: Color(0xFFC24D2C),
+        borderRadius: BorderRadius.circular(10)
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(25),
+            child: Image(image: AssetImage(Imgurl), width: 75,)),
+          Padding(
+            padding: const EdgeInsets.only(left: 10, top: 0),
+            child: Text(name, textAlign: TextAlign.center, style: GoogleFonts.poppins(
+              fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black.withOpacity(0.75)
+            ),),
+          ),
+       
+        ],
+      ),
+    ),
+  );
+
 }

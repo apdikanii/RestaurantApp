@@ -20,13 +20,13 @@ class Order extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-             height: 50,
+             height: 88,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: darkBlueColor,
               ),
               child:Padding(
-                padding: const EdgeInsets.only( top: 12),
+                padding: const EdgeInsets.only( top: 48),
                 child: Text("My Orders", textAlign: TextAlign.center, style: GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.w600, color: Colors.white),),
               ),
           ),
@@ -34,17 +34,17 @@ class Order extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              title(text: titles[0], onClick: (){}),
+              title(text: titles[0], onClick: (){ sekectedTitle(context, 0);}),
               SizedBox(width: 10,),
-              title(text: titles[1], onClick: (){}),
+              title(text: titles[1], onClick: (){sekectedTitle(context, 1);}),
               SizedBox(width: 10,),
-              title(text: titles[1], onClick: (){}),
+              title(text: titles[1], onClick: (){sekectedTitle(context, 2);}),
 
             ],
           ),
           //Second bannar part will start now
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(8.0),
             child: Text('Pending Orders', textAlign: TextAlign.left, style: GoogleFonts.poppins(
               fontSize: 25, fontWeight: FontWeight.w500, color: Color(0xFF3E4A61)
             ),),
@@ -56,7 +56,7 @@ class Order extends StatelessWidget {
           item: "3 Items", Process: "Process", time: "7.50"),
           //lemon Juice part will design
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(.0),
             child: Text('Pending Orders', textAlign: TextAlign.left, style: GoogleFonts.poppins(
               fontSize: 25, fontWeight: FontWeight.w500, color: Color(0xFF3E4A61)
             ),),
@@ -77,14 +77,14 @@ class Order extends StatelessWidget {
      return InkWell(
       onTap: onClick,
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(8.0),
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
             color: _Color,
           ),
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(8.0),
             child: Text(text, style: GoogleFonts.poppins(
               fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black
             ),),
@@ -92,6 +92,20 @@ class Order extends StatelessWidget {
         ),
       ),
      );
+  }
+  
+  void sekectedTitle(BuildContext context, int index) {
+    switch(index){
+      case 0:
+        hoverColor: Colors.black;
+        break;
+      case 1:
+        hoverColor: Colors.black;
+        break;
+      case 2:
+        hoverColor: Colors.black;
+        break;
+    }
   }
 
 }
@@ -107,7 +121,7 @@ class Lemon extends StatelessWidget {
     return InkWell(
       onTap: clicks,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+        margin: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: Color(0xFFD9DAD7)
