@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reastrants_app/constants/constant_color.dart';
+import 'package:reastrants_app/pages/order/sec_order.dart';
 
 class Order extends StatelessWidget {
   Order({super.key});
@@ -44,25 +45,27 @@ class Order extends StatelessWidget {
           ),
           //Second bannar part will start now
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only (left: 8.0),
             child: Text('Pending Orders', textAlign: TextAlign.left, style: GoogleFonts.poppins(
               fontSize: 25, fontWeight: FontWeight.w500, color: Color(0xFF3E4A61)
             ),),
           ),  
-          Lemon(clicks: (){}, imgs: 'assets/images/orderimg2.png', juice: "Lemon Juice", 
-          item: "3 Items", Process: "Process", time: "7.50"),
+          Lemon(clicks: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SecOrder(),));
+          }, imgs: 'assets/images/orderimg2.png', juice: "Lemon Juice", 
+          item: "3 Items", Process: "Process", time: "7.50\$"),
 
           Lemon(clicks: (){}, imgs: 'assets/images/orderimg2.png', juice: "Lemon Juice", 
-          item: "3 Items", Process: "Process", time: "7.50"),
+          item: "3 Items", Process: "Process", time: "7.50\$"),
           //lemon Juice part will design
           Padding(
-            padding: const EdgeInsets.all(.0),
+            padding: const EdgeInsets.only(left: 8.0),
             child: Text('Pending Orders', textAlign: TextAlign.left, style: GoogleFonts.poppins(
               fontSize: 25, fontWeight: FontWeight.w500, color: Color(0xFF3E4A61)
             ),),
           ),  
           Lemon(clicks: (){}, imgs: 'assets/images/orderimg2.png', juice: "Lemon Juice", 
-          item: "3 Items", Process: "Process", time: "7.50"),
+          item: "3 Items", Process: "Process", time: "7.50\$"),
         ],
       ),
     ),

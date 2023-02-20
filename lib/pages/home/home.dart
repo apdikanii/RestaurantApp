@@ -18,15 +18,17 @@ class Home extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 20,),
             Container(
-              height: 112,
+              height: 92,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: darkBlueColor,
               ),
+              
               child: Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(top: 45,left: 24)),
+                  Padding(padding: EdgeInsets.only(top: 0,left: 24)),
                   Expanded(
                    child: TextField(
                       onChanged: (value) {},

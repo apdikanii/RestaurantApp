@@ -186,7 +186,7 @@ class _SignInState extends State<SignIn> {
                         TextSpan(
                             text: 'Sign Up',
                             style: GoogleFonts.poppins(
-                              fontSize: 20, fontWeight: FontWeight.w400, color: Color(0xFFC24D2C)
+                              decoration: TextDecoration.underline, fontSize: 20, fontWeight: FontWeight.w400, color: Color(0xFFC24D2C)
                             )),
                         // can add more TextSpans here...
                       ],

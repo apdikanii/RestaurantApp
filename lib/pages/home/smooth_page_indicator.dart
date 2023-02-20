@@ -17,7 +17,7 @@ class Smoothpage1 extends StatelessWidget {
             Container(
               
                   padding: EdgeInsets.only(top: 18, left: 20),
-                  height: 251,
+                  height: 231,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
           
